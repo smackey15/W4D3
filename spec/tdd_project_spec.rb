@@ -38,8 +38,21 @@ describe Array do
             ])
         }
 
-        it "converts a row-oriented representation into a column-oriented representation"
+        it "converts a row-oriented representation into a column-oriented representation" do
+            expect(array.my_transpose).to eq(array.transpose)
+        end
 
+        it "check every element has the same length" do
+            subject(:array_two) {Array.new(
+            [
+                [0, 1, 2],
+                [3, 4],
+                [6, 7, 8]
+            ])
+        }
+            #same_length = array.all? {|ele| ele.length == array.first.length}
+            expect(array_two).to be false
+        end
     end
 
 end
