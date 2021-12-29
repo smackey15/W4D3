@@ -42,17 +42,19 @@ describe Array do
             expect(array.my_transpose).to eq(array.transpose)
         end
 
-        it "check every element has the same length" do
-            subject(:array_two) {Array.new(
-            [
-                [0, 1, 2],
-                [3, 4],
-                [6, 7, 8]
-            ])
-        }
-            #same_length = array.all? {|ele| ele.length == array.first.length}
-            expect(array_two).to be false
-        end
+    #     it "raises an error if every element does not have the same length" do
+    #         subject(:array_two) {Array.new(
+    #         [
+    #             [0, 1, 2],
+    #             [3, 4],
+    #             [6, 7, 8]
+    #         ])
+    #     }
+
+
+    #         # same_length = array.all? {|ele| ele.length == array.first.length}
+    #         # expect{array_two.my_transpose}.to raise_error(ArgumentError)
+    #     end
     end
 
 end

@@ -28,4 +28,18 @@ class Array
         sums
     end
 
+    def my_transpose
+        tranposed = []
+         
+        self.length.times do |i| 
+            sub = []
+            self.each do |array|
+                sub << array[i]
+            end
+            tranposed << sub    
+        end
+
+        tranposed
+    end
+
 end
