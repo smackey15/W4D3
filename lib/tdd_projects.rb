@@ -12,6 +12,9 @@ class Array
 
 
     def two_sum
+        return false if self.empty?
+        raise "please enter at least two elements" if self.count < 2
+
         sums = []
         
         self.each_with_index do |num1, i1|

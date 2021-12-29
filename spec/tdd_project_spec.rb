@@ -20,6 +20,13 @@ describe Array do
             expect(array_two_sum.two_sum).to eq([[0, 4], [2, 3]])
         end
 
+        it  "returns false when an empty array is tested" do
+            expect(Array.new.two_sum).to be false
+        end
+
+        it "contains at least two elements in the array" do
+            expect {Array.new([1]).two_sum}.to raise_error("please enter at least two elements")
+        end
         
 
     end
