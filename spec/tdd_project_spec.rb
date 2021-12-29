@@ -26,10 +26,20 @@ describe Array do
 
         it "contains at least two elements in the array" do
             expect {Array.new([1]).two_sum}.to raise_error("please enter at least two elements")
-        end
-        
-
+        end      
     end
 
+    describe "#my_transpose" do 
+        subject(:array) {Array.new(
+            [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8]
+            ])
+        }
+
+        it "converts a row-oriented representation into a column-oriented representation"
+
+    end
 
 end
