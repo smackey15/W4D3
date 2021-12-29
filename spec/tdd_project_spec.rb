@@ -2,13 +2,17 @@ require "rspec"
 require "tdd_projects"
 
 describe Array do
+
     
     describe "#my_uniq" do
-        subject(:array_uniq) {Array.new([1, 2, 1, 3, 3])}
-       
+        let(:multiplier) {double("multiplier", :multiply 5)}
+        subject(:array_uniq) {Array.new([1, 2, 1, 3, 3], multiplier)}
+
         it "returns an array of unique elements" do
             expect(array_uniq.my_uniq).to eq([1,2,3])
         end
+
+        it "calls multiply on the multiplers"
     end
 
 
@@ -42,19 +46,17 @@ describe Array do
             expect(array.my_transpose).to eq(array.transpose)
         end
 
-    #     it "raises an error if every element does not have the same length" do
-    #         subject(:array_two) {Array.new(
-    #         [
-    #             [0, 1, 2],
-    #             [3, 4],
-    #             [6, 7, 8]
-    #         ])
-    #     }
-
-
-    #         # same_length = array.all? {|ele| ele.length == array.first.length}
-    #         # expect{array_two.my_transpose}.to raise_error(ArgumentError)
-    #     end
+        it "raises an error if every element does not have the same length" do
+            array_two = Array.new(
+            [
+                [0, 1, 2],
+                [3, 4],
+                [6, 7, 8]
+            ])
+        
+            # same_length = array.all? {|ele| ele.length == array.first.length}
+             expect{array_two.my_transpose}.to raise_error(ArgumentError)
+        end
     end
 
 end

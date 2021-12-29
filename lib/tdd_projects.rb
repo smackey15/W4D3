@@ -29,6 +29,8 @@ class Array
     end
 
     def my_transpose
+        same_length = self.all? {|ele| ele.length == self.first.length}
+        #raise ArgumentError if !same_length 
         tranposed = []
          
         self.length.times do |i| 
@@ -43,3 +45,9 @@ class Array
     end
 
 end
+#p [
+#    [0, 1, 2],
+#    [3, 4],
+#    [6, 7, 8]
+#].my_transpose
+
